@@ -1,6 +1,6 @@
 # YOLOv5 PyTorch to TFLite example
 
-Export [YOLOv5](https://github.com/ultralytics/yolov5) to TFLite and evaluate on COCO val dataset.
+Export [ultralytics/YOLOv5](https://github.com/ultralytics/yolov5) to TFLite and evaluate on COCO val dataset.
 
 ## URLs
 
@@ -11,9 +11,9 @@ Export [YOLOv5](https://github.com/ultralytics/yolov5) to TFLite and evaluate on
 ## Procedure
 
 ```
-PROJ_DIR=$HOME
-cd $PROJ_DIR
-git clone git@github.com:ultralytics/yolov5.git  # tested with c43439aa31afdca9d1adbd1cc35b57bfb95b442d
+# clone yolov5 source
+# tested with c43439aa31afdca9d1adbd1cc35b57bfb95b442d
+git clone git@github.com:ultralytics/yolov5.git
 cd yolov5
 
 # docker build and run
@@ -43,3 +43,17 @@ python val.py --weights yolov5s-int8.tflite --data data/coco.yaml
 |YOLOv5s [PyTorch]     |640 |37.1 |56.3 |40.1 |21.9 |42.6 |47.2
 |YOLOv5s [TFLite fp16] |640 |37.0 |56.1 |39.9 |21.5 |42.4 |47.5
 |YOLOv5s [TFLite int8] |640 |31.4 |51.9 |33.0 |14.2 |36.3 |43.5
+
+## Appendix: demo on edge devices (e.g., RPi)
+
+```
+# install tflite_runtime
+pip3 install --extra-index-url https://google-coral.github.io/py-repo/ tflite_runtime
+
+git clone git@github.com:ultralytics/yolov5.git
+cd yolov5
+
+# run webcam demo
+# note that .tflite weight file is the one prepared above
+python detect.py --weight yolov5s-int8.tflite --source 0
+```
