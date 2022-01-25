@@ -47,11 +47,13 @@ python val.py --weights yolov5s-int8.tflite --data data/coco.yaml
 ## Appendix: demo on edge devices (e.g., RPi)
 
 ```
-# install tflite_runtime
-pip3 install --extra-index-url https://google-coral.github.io/py-repo/ tflite_runtime
-
 git clone git@github.com:ultralytics/yolov5.git
 cd yolov5
+pip install -r requirements.txt
+
+# install tflite-runtime
+# see also: https://www.tensorflow.org/lite/guide/python?hl=en
+pip install tflite-runtime
 
 # run webcam demo
 # note that .tflite weight file is the one prepared above
