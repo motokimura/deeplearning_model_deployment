@@ -53,7 +53,7 @@ pip install -r requirements.txt
 
 # install tflite-runtime
 # see also: https://www.tensorflow.org/lite/guide/python?hl=en
-pip install tflite-runtime
+pip install --extra-index-url https://google-coral.github.io/py-repo/ tflite_runtime
 
 # run webcam demo
 # note that .tflite weight file is the one prepared above
