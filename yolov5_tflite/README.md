@@ -12,7 +12,7 @@ Export [ultralytics/YOLOv5](https://github.com/ultralytics/yolov5) to TFLite and
 
 ```
 # clone yolov5 source
-# tested with c43439aa31afdca9d1adbd1cc35b57bfb95b442d
+# tested with 7539cd75c3a6c06d00848617f6265f39a765ccea
 git clone git@github.com:ultralytics/yolov5.git
 cd yolov5
 
